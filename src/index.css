@@ -1,0 +1,9 @@
+body { font-family:Verdana, Geneva, sans-serif; font-size:10pt; background: beige}
+
+a:link    { color:#12ed5f; text-decoration:none; }
+a:visited { color: red; text-decoration: none; }
+
+.gbtop  { margin-right: 5px; color: #12ed5f; background-color: black; font-size: 10pt };
+.gbmain{ color: #12ed5f; background-color: #2352fc; font-size: 10pt;}
+#itemlist { color: #12ed5f; background-color: #2352fc; width: 1300px; line-height: 12px;}
+.item { color: #12ed5f; background-color: #2352fc; font-size: 10pt; line-height: 12px;}
