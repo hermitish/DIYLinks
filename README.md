@@ -15,8 +15,10 @@
 3. Implement signup/login => DONE
 4. Implement posts => DONE
 5. Implement votes
+6. Make MS Edge Compatible
 
 ---contributing/hakctoberfest---
 1. Made with html, css, js(plain vanilla) with firebase backend.
-2. To be added as member on the firebase project, start an issue with what you would like to fix/add, along with your google account. 
-3. For feature requests/suggestions of any other kind, the above is not required.
+2. To run it, fire up a terminal, install http-server(https://www.npmjs.com/package/http-server), cd into src, type 'http-server', and visit localhost:8080 on your browser of choice.
+3. To be added as member on the firebase project, start an issue with what you would like to fix/add, along with your google account. 
+4. For feature requests/suggestions of any other kind, the above is not required.
