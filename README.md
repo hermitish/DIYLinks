@@ -1,24 +1,206 @@
------------------
-----DIY Links----
------------------
+<div id="top"></div>
 
----overview---
+<!-- PROJECT SHIELDS -->
 
-1. Hacker news like site but only project showcase and tutorials.
-2. Mostly tech related projects (possibly arranged in hobbies based categories).
-3. One level of children(comments)
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+<!-- PROJECT LOGO (not yet designed) -->
+<!-- <br />
+<div align="center">
+  <a href="https://github.com/hermitish/DIYLinks">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a> -->
+
+<h1 align="center">DIY Links</h3>
+
+  <p align="center">
+    Totally Not Hacker News!
+    <br />
+    <a href="https://github.com/hermitish/DIYLinks">View Demo</a>
+    ·
+    <a href="https://github.com/hermitish/DIYLinks/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/hermitish/DIYLinks/issues">Request Feature</a>
+  </p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+
+1. Hacker News like site but only for project showcases and tutorials.
+2. Mostly tech related projects (possibly arranged in hobbies based categories)-
+3. One level of children (comments).
 4. Firebase stores everything.
 
----todolist---
-1. Copy HN site HTML => DONE
-2. Add firebase and related functionality => DONE
-3. Implement signup/login => DONE
-4. Implement posts => DONE
-5. Implement votes
-6. Make MS Edge Compatible
+<p align="right">(<a href="#top">back to top</a>)</p>
 
----contributing/hakctoberfest---
-1. Made with html, css, js(plain vanilla) with firebase backend.
-2. To run it, fire up a terminal, install http-server(https://www.npmjs.com/package/http-server), cd into src, type 'http-server', and visit localhost:8080 on your browser of choice.
-3. To be added as member on the firebase project, start an issue with what you would like to fix/add, along with your google account. 
-4. For feature requests/suggestions of any other kind, the above is not required.
+### Built With
+
+- HTML
+- CSS
+- Vanilla JavaScript
+- [Firebase](https://firebase.google.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+To get a local copy of DIYLinks up and running follow these simple steps:
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
+- http-server
+  ```sh
+  npm install http-server -g
+  ```
+  <!-- I guess the http-server could be installed automatically with npm install in the future. -->
+
+### Installation
+
+1. Make sure you have installed the prequisites and then open the terminal.
+
+2. Clone the repo
+   ```sh
+   git clone https://github.com/hermitish/DIYLinks.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Run the server
+   ```sh
+   cd src
+   http-server
+   ```
+5. Open your web browser and go to http://localhost:8080/
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+
+<!-- ## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+<p align="right">(<a href="#top">back to top</a>)</p> -->
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+- [x] Copy HN site HTML
+- [x] Add firebase and related functionality
+- [x] Implement signup/login
+- [x] Implement posts
+- [] Implement votes
+- [] Make MS Edge Compatible
+
+See the [open issues](https://github.com/hermitish/DIYLinks/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+To be added as member on the firebase project, start an issue with what you would like to fix/add, along with your Google account.
+
+For feature requests/suggestions of any other kind, the above is not required.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Hermitish - hermitishdev10@gmail.com
+
+Project Link: [https://github.com/hermitish/DIYLinks](https://github.com/hermitish/DIYLinks)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+- [Hermitish](https://github.com/hermitish) - Created the project
+- [Arihant Tripathy](https://github.com/Arihant25)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/hermitish/DIYLinks.svg?style=for-the-badge
+[contributors-url]: https://github.com/hermitish/DIYLinks/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/hermitish/DIYLinks.svg?style=for-the-badge
+[forks-url]: https://github.com/hermitish/DIYLinks/network/members
+[stars-shield]: https://img.shields.io/github/stars/hermitish/DIYLinks.svg?style=for-the-badge
+[stars-url]: https://github.com/hermitish/DIYLinks/stargazers
+[issues-shield]: https://img.shields.io/github/issues/hermitish/DIYLinks.svg?style=for-the-badge
+[issues-url]: https://github.com/hermitish/DIYLinks/issues
+[license-shield]: https://img.shields.io/github/license/hermitish/DIYLinks.svg?style=for-the-badge
+[license-url]: https://github.com/hermitish/DIYLinks/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/linkedin_username
+[product-screenshot]: images/screenshot.png
