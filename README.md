@@ -17,8 +17,7 @@
 
 <h1 align="center">DIY Links</h3>
 
-  <p align="center">
-    Totally Not Hacker News!
+  <p align="center">    
     <br />
     <a href="https://github.com/hermitish/DIYLinks">View Demo</a>
     ·
