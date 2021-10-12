@@ -154,6 +154,8 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+--You are advised to create temporary email account(s) (for example from [here](https://temp-mail.org/)) for the purposes of testing.
+
 To be added as member on the firebase project, start an issue with what you would like to fix/add, along with your Google account.
 
 For feature requests/suggestions of any other kind, the above is not required.
