@@ -26,5 +26,6 @@ if(localStorage.getItem('userLoggedIn') == 'True'){
         }
     })
 } else {
+    localStorage.setItem('submitToLogin', 'True');
     window.location.href = "../login/login.html";
 }
