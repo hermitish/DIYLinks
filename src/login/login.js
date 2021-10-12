@@ -2,18 +2,18 @@ import { firebaseApp } from '../initialise.js';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js";
 // https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js
 
-// Check if user already logged in
-
-if(localStorage.getItem('userLoggedIn') == 'True'){
-    window.location.href = "../index.html";
-}
-
 // Consts
 
 export const auth = getAuth();
 const login_form = document.getElementById("login-form");
 const signup_form = document.getElementById("signup-form");
-export var user;
+var user;
+
+// Check if user already logged in
+
+if(localStorage.getItem('userLoggedIn') == 'True'){
+    window.location.href = "../index.html";
+}
 
 // Login
 
@@ -25,7 +25,11 @@ function signIn(email, password){
         localStorage.setItem('userLoggedIn', 'True');
         localStorage.setItem('userEmail', auth.currentUser.email);
         localStorage.setItem('userUID', auth.currentUser.uid)
-        window.location.href = "../index.html";
+        if(localStorage.getItem('submitToLogin') == 'True'){
+            window.location.href = "../submit/submit.html";
+        } else {
+            window.location.href = "../index.html";
+        }
     }).catch((error) => {
         console.error("Error logging in: ", error);
     });
@@ -35,8 +39,7 @@ login_form.addEventListener('submit', e => {
     e.preventDefault();
     const email = login_form['email-input']['value'];
     const password = login_form['password-input']['value'];
-    signIn(email, password);
-    // console.log()
+    signIn(email, password);    
 })
 
 
@@ -64,8 +67,11 @@ function signUp(email, password){
         localStorage.setItem('userUID', auth.currentUser.uid)
         window.location.href = "../index.html";
     }).catch((error) => {
-        signup_errorCode = error.code;
-        signup_errorMessage = error.message;
+        if(localStorage.getItem('submitToLogin') == 'True'){
+            window.location.href = "../submit/submit.html";
+        } else {
+            window.location.href = "../index.html";
+        }        
         console.error("Error signing up: ", error);
     });
 }
