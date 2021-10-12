@@ -6,7 +6,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![GNU License][license-shield]][license-url]
 
 <!-- PROJECT LOGO (not yet designed) -->
 <!-- <br />
@@ -84,7 +84,7 @@ To get a local copy of DIYLinks up and running follow these simple steps:
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This is a list of things you need to develop DIYLinks.
 
 - npm
   ```sh
@@ -165,7 +165,7 @@ For feature requests/suggestions of any other kind, the above is not required.
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the GNU License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -201,6 +201,4 @@ Project Link: [https://github.com/hermitish/DIYLinks](https://github.com/hermiti
 [issues-url]: https://github.com/hermitish/DIYLinks/issues
 [license-shield]: https://img.shields.io/github/license/hermitish/DIYLinks.svg?style=for-the-badge
 [license-url]: https://github.com/hermitish/DIYLinks/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
