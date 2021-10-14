@@ -19,15 +19,23 @@ querySnapshot.forEach((doc1) => {
     var tr = document.createElement("tr");
     var td1 = document.createElement("td");    
     var td2 = document.createElement("td");
-    var upArrow = String.fromCharCode(9652);
-    var upArrowButton = document.createElement("button");
+    var upArrow = " " + String.fromCharCode(9709);
+    var upArrowButton = document.createElement("span");
     var posterShow = document.createElement("td");
+    upArrowButton.id = "upvote-link";
+    upArrowButton.style.backgroundColor = "#2352fc";
+    upArrowButton.style.color = "#12ed5f";
+    upArrowButton.style.border = "none";
+    upArrowButton.style.cursor = "pointer";
     upArrowButton.innerText = upArrow;
-    upArrowButton.style.color = "green";
     upArrowButton.onclick = function () {
-        var ref = doc(db, "posts", doc1.id);
+        var ref = doc(db, "posts", doc1.id);        
         updateDoc(ref, {
             votes: votes + 1
+        }).then((something) => {
+            ;
+        }).catch((e) => {
+            window.alert("Log in to vote posts.")
         })
     }
     td1.className = "item";    
@@ -42,7 +50,7 @@ querySnapshot.forEach((doc1) => {
         displayUrl = displayUrl.slice(0, 57);
         displayUrl = displayUrl.concat("...");
     }
-    td2.innerHTML = "<a href=" + docData['url'] + " target=\"_blank\">" + displayUrl + "</a>";    
+    td2.innerHTML = "<a href=\"" + docData['url'] + "\" target=\"_blank\">" + displayUrl + "</a>";    
     if(docData['poster_username'] != undefined){
         posterShow.innerText = docData['poster_username']; // Eventually a link to the user's profile[1] 
     } else {
@@ -59,12 +67,16 @@ querySnapshot.forEach((doc1) => {
 
 const logout_button = document.getElementById("logout-button");
 function logOut(){
-    signOut(auth).then(() => {
-        localStorage.clear();        
-        window.alert("Successfully logged out!");
-    }).catch((e) => {
-        console.error("Log out error: ", error);
-    })    
+    if(localStorage.getItem("userLoggedIn") !== null){
+        signOut(auth).then(() => {
+            localStorage.clear();        
+            window.alert("Successfully logged out!");            
+        }).catch((e) => {
+            console.error("Log out error: ", error);
+        })
+    } else {
+        window.alert("You're already logged out.")
+    }
 }
 logout_button.addEventListener('click', e => {
     e.preventDefault();
