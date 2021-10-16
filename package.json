@@ -1,0 +1,22 @@
+{
+  "name": "diylinks",
+  "version": "0.0.1",
+  "description": "Hacker News like site but only for project showcases and tutorials",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hermitish/DIYLinks.git"
+  },
+  "author": "Hermitish",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hermitish/DIYLinks/issues"
+  },
+  "homepage": "https://github.com/hermitish/DIYLinks#readme",
+  "dependencies": {
+    "http-server": "^13.0.2"
+  }
+}
