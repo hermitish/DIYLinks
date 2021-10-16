@@ -4,6 +4,7 @@
   "description": "Hacker News like site but only for project showcases and tutorials",
   "main": "index.js",
   "scripts": {
+    "start": "http-server -c-1 -p 8081 -o src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

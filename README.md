@@ -85,15 +85,7 @@ To get a local copy of DIYLinks up and running follow these simple steps:
 
 This is a list of things you need to develop DIYLinks.
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-- http-server
-  ```sh
-  npm install http-server -g
-  ```
-  <!-- I guess the http-server could be installed automatically with npm install in the future. -->
+- [Node.js](https://nodejs.org/)
 
 ### Installation
 
@@ -103,16 +95,15 @@ This is a list of things you need to develop DIYLinks.
    ```sh
    git clone https://github.com/hermitish/DIYLinks.git
    ```
-3. Install NPM packages
+3. Install the required NPM packages
    ```sh
    npm install
    ```
-4. Run the server
+4. Run the project
    ```sh
-   cd src
-   http-server
+   npm start
    ```
-5. Open your web browser and go to http://localhost:8080/
+5. Your web browser will automatically open with the site.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -132,8 +123,8 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [x] Add firebase and related functionality
 - [x] Implement signup/login
 - [x] Implement posts
-- [] Implement votes
-- [] Make MS Edge Compatible
+- [ ] Implement votes
+- [ ] Make MS Edge Compatible
 
 See the [open issues](https://github.com/hermitish/DIYLinks/issues) for a full list of proposed features (and known issues).
 
@@ -154,9 +145,9 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
---You are advised to create temporary email account(s) (for example from [here](https://temp-mail.org/)) for the purposes of testing.
+You are advised to create temporary email account(s) (for example from [here](https://temp-mail.org/)) for the purposes of testing.
 
-To be added as member on the firebase project, start an issue with what you would like to fix/add, along with your Google account.
+To be added as a member on the Firebase project, start an issue with what you would like to fix/add, along with your Google account email.
 
 For feature requests/suggestions of any other kind, the above is not required.
 
