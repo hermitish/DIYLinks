@@ -123,7 +123,10 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [x] Add firebase and related functionality
 - [x] Implement signup/login
 - [x] Implement posts
-- [ ] Implement votes
+- [x] Implement votes
+- [ ] Implement user pages
+- [ ] Implement different sorting orders
+- [ ] Implement 'hot' sorting(and show it as default)
 - [ ] Make MS Edge Compatible
 
 See the [open issues](https://github.com/hermitish/DIYLinks/issues) for a full list of proposed features (and known issues).
