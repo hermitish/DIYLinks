@@ -17,11 +17,16 @@
        <b>Create Account</b><br><br>
         <form id="signup-form">
             <label for="email-input">email:</td>
-            <input type="text" id="email-input">
-            <label for="display-name-input">email:</td>
-            <input type="text" id="display-name-input">
+            <input type="text" id="email-input" required>
+            <label for="display-name-input">username:</td>
+            <input type="text" id="username-input">
             <label for="password-input">password:</label>
-            <input type="password" id="password-input">
+            <input type="password" id="password-input" required>
+            <br>
+            <label for="about-input">about(optional):</td>
+            <textarea id="about-input"></textarea>            
+            <label for="website-input">website:</td>
+            <input type="text" id="website-input">
             <br>
             <input type="submit" value="sign up">            
        </form>       
