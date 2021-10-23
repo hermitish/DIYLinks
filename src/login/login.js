@@ -1,15 +1,14 @@
 import { firebaseApp } from '../initialise.js';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js";
-// https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js";
 
-// Consts
 
-export const auth = getAuth();
+// Consts 
+const db = getFirestore();
+const auth = getAuth();
 const login_form = document.getElementById("login-form");
 const signup_form = document.getElementById("signup-form");
 var user;
-var username;
-var email;
 
 // Check if user already logged in
 
@@ -18,15 +17,12 @@ if(localStorage.getItem('userLoggedIn') == 'True'){
 }
 
 // Login
-
 function signIn(email, password){
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {    
         user = userCredential.user;
-        console.log("Login successful!: ", user);
-        localStorage.setItem('userLoggedIn', 'True');               
-        localStorage.setItem('username', user.displayName);
-        localStorage.setItem('userEmail', user.email);
+        localStorage.setItem('userLoggedIn', 'True');
+        localStorage.setItem('username', user.displayName);        
         if(localStorage.getItem('submitToLogin') == 'True'){
             window.location.href = "../submit/submit.html";
         } else {
@@ -45,6 +41,7 @@ login_form.addEventListener('submit', e => {
 })
 
 
+
 // Sign Up
 
 /*
@@ -61,20 +58,32 @@ function show_password(){
 }
 */
 
-function signUp(email, password, username){
+function signUp(email, password, username, about, website){
     createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {            
-        localStorage.setItem('userLoggedIn', 'True');       
+    .then((userCredential) => {
+        user = userCredential.user;
+        const userDocRef = addDoc(collection(db, "users"), {           
+            username: username,
+            about: about,
+            website: website,
+            points: 0,
+            // list of submissions or anything else that's interesting will follow soon...
+        }).then(() => {
+            localStorage.setItem('userLoggedIn', 'True');
+            localStorage.setItem('userAbout', about);
+            localStorage.setItem('userWebsite', website);
+            localStorage.setItem('username', username);
+            if(localStorage.getItem('submitToLogin') == 'True'){
+                window.location.href = "../submit/submit.html";
+            } else {
+                window.location.href = "../index.html";
+            }
+        }).catch((e) => {
+            console.error("Error setting user document: ", e);
+        })
         updateProfile(userCredential.user, {
             displayName: username
-        })              
-        localStorage.setItem('username', username);
-        localStorage.setItem('userEmail', email);
-        if(localStorage.getItem('submitToLogin') == 'True'){
-            window.location.href = "../submit/submit.html";
-        } else {
-            window.location.href = "../index.html";
-        }
+        })        
     }).catch((error) => {        
         console.error("Error signing up: ", error);
     });    
@@ -84,5 +93,7 @@ signup_form.addEventListener('submit', e => {
     const email = signup_form['email-input']['value'];
     const password = signup_form['password-input']['value'];    
     const username = signup_form['username-input']['value'];
-    signUp(email, password, username);
+    const about = signup_form['about-input']['value'];
+    const website = signup_form ['website-input']['value'];
+    signUp(email, password, username, about, website);
 })
