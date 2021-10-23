@@ -1,7 +1,14 @@
 // 'https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js';
+import { firebaseApp, auth } from './initialise.js';
 import { doc, getFirestore, getDocs, query, collection, updateDoc, orderBy, limit } from 'https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js';
 import { signOut } from 'https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js';
-import { firebaseApp, auth } from './initialise.js';
+
+if(localStorage.getItem('userLoggedIn')){
+    const login = document.getElementById("login");
+    login.hidden = true;
+    const userpage_link = document.getElementById("user");
+    userpage_link.innerText = localStorage.getItem('username');
+}
 
 // Retrieve and show posts
 
@@ -21,7 +28,7 @@ querySnapshot.forEach((doc1) => {
     var td2 = document.createElement("td");
     var upArrow = " " + String.fromCharCode(9709);
     var upArrowButton = document.createElement("span");
-    var posterShow = document.createElement("td");
+    var posterShow = document.createElement("a");
     upArrowButton.id = "upvote-link";
     upArrowButton.style.backgroundColor = "#2352fc";
     upArrowButton.style.color = "#12ed5f";
@@ -52,16 +59,32 @@ querySnapshot.forEach((doc1) => {
     }
     td2.innerHTML = "<a href=\"" + docData['url'] + "\" target=\"_blank\">" + displayUrl + "</a>";    
     if(docData['poster_username'] != undefined){
-        posterShow.innerText = docData['poster_username']; // Eventually a link to the user's profile[1] 
+        posterShow.innerText = docData['poster_username']; // Eventually a link to the user's profile[1]         
     } else {
-        posterShow.innerText = docData['poster_email']; // Eventually a link to the user's profile[1] 
+        posterShow.href = docData['poster_email']; // Eventually a link to the user's profile[1]         
     }
+    posterShow.href = "./userpage/userpage.html";
+    posterShow.setAttribute("target", "_blank");
+    posterShow.onclick = () => {        
+        if(docData['poster_username'] != undefined){
+            localStorage.setItem('userpagePoster', docData['poster_username']);
+        } else {
+            localStorage.setItem('userpagePoster', docData['poster_email']);
+        }
+    };
     tr.appendChild(td1);
     tr.appendChild(td2);    
     tr.appendChild(posterShow);
     itemList.appendChild(tr);    
     count += 1;
 })
+
+// Logged In User's Userpage
+
+const my_userpage = document.getElementById("user");
+my_userpage.onclick = () => {
+    localStorage.setItem('userpagePoster', localStorage.getItem('username'));
+}
 
 // Logout
 
@@ -71,6 +94,7 @@ function logOut(){
         signOut(auth).then(() => {
             localStorage.clear();        
             window.alert("Successfully logged out!");            
+            window.location.reload();
         }).catch((e) => {
             console.error("Log out error: ", error);
         })
@@ -78,6 +102,7 @@ function logOut(){
         window.alert("You're already logged out.")
     }
 }
+
 logout_button.addEventListener('click', e => {
     e.preventDefault();
     logOut();
